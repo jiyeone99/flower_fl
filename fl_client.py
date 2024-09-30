@@ -67,7 +67,7 @@ class CifarClient(fl.client.NumPyClient):
 
     def send_parameters_to_server(self, parameters):
         """Send parameters to the Flask server."""
-        server_url = "http://127.0.0.1:5000/send_params"
+        server_url = "http://192.168.0.38:5000/send_params"
         client_id = "client_1"  # 각 클라이언트에 고유한 ID를 설정
         data = {
             "client_id": client_id,
@@ -171,7 +171,7 @@ def main() -> None:
             testset = testset.select(range(10))
         # Start Flower client
         client = CifarClient(trainset, testset, device, args.model).to_client()
-        fl.client.start_client(server_address="127.0.0.1:8080", client=client)
+        fl.client.start_client(server_address="192.168.0.38:8080", client=client)
 
 
 if __name__ == "__main__":
