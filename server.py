@@ -21,7 +21,14 @@ strategy = fl.server.strategy.FedAvg(evaluate_metrics_aggregation_fn=weighted_av
 
 # Start Flower server
 fl.server.start_server(
+<<<<<<< HEAD
     server_address="192.168.0.38:8080",
     config=fl.server.ServerConfig(num_rounds=10),
     strategy=strategy,
 )
+=======
+    server_address="0.0.0.0:8080",
+    config=fl.server.ServerConfig(num_rounds=10),
+    strategy=strategy,
+)
+>>>>>>> f9786dc (update)
